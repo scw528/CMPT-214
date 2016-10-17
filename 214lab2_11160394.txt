@@ -1,0 +1,211 @@
+# Sam Wilkinson
+# 11160394
+# CMPT 214 Lab 2
+
+QUESTION 1
+
+a)
+
+scw528@tux6:~> cd 214bin
+scw528@tux6:~/214bin> mkdir 214lab2
+scw528@tux6:~/214bin> cd 214lab2
+scw528@tux6:~/214bin/214lab2> touch file{1..15}.txt
+scw528@tux6:~/214bin/214lab2> ls
+file1.txt   file12.txt	file15.txt  file4.txt  file7.txt
+file10.txt  file13.txt	file2.txt   file5.txt  file8.txt
+file11.txt  file14.txt	file3.txt   file6.txt  file9.txt
+scw528@tux6:~/214bin/214lab2> touch data{1..5}.dat
+scw528@tux6:~/214bin/214lab2> ls
+data1.dat  data4.dat  file10.txt  file13.txt  file2.txt  file5.txt  file8.txt
+data2.dat  data5.dat  file11.txt  file14.txt  file3.txt  file6.txt  file9.txt
+data3.dat  file1.txt  file12.txt  file15.txt  file4.txt  file7.txt
+
+b)
+
+scw528@tux6:~/214bin/214lab2> ls *.dat
+data1.dat  data2.dat  data3.dat  data4.dat  data5.dat
+
+c)
+
+scw528@tux6:~/214bin/214lab2> ls -l *file{10..15}.txt
+-rw-r----- 1 scw528 student 0 Sep 22 11:02 file10.txt
+-rw-r----- 1 scw528 student 0 Sep 22 11:02 file11.txt
+-rw-r----- 1 scw528 student 0 Sep 22 11:02 file12.txt
+-rw-r----- 1 scw528 student 0 Sep 22 11:02 file13.txt
+-rw-r----- 1 scw528 student 0 Sep 22 11:02 file14.txt
+-rw-r----- 1 scw528 student 0 Sep 22 11:02 file15.txt
+
+d)
+
+scw528@tux6:~/214bin/214lab2> file file{1,3,4,6,9}.txt
+file1.txt: empty
+file3.txt: empty
+file4.txt: empty
+file6.txt: empty
+file9.txt: empty
+
+QUESTION 2
+
+a)
+
+scw528@tux6:~/214bin/214lab2> rm -f fake_file.txt
+scw528@tux6:~/214bin/214lab2> 
+
+b)
+
+scw528@tux6:~/214bin/214lab2> cat fake_file.txt my_name.txt
+cat: fake_file.txt: No such file or directory
+Sam Wilkinsom
+11160394
+
+c)
+
+scw528@tux6:~/214bin/214lab2> cat fake_file.txt my_name.txt > standard_output.txt
+cat: fake_file.txt: No such file or directory
+scw528@tux6:~/214bin/214lab2> cat fake_file.txt my_name.txt 2> standard_error.txt
+Sam Wilkinsom
+11160394
+scw528@tux6:~/214bin/214lab2> cat standard_output.txt
+Sam Wilkinsom
+11160394
+scw528@tux6:~/214bin/214lab2> cat standard_error.txt
+cat: fake_file.txt: No such file or directory
+
+d) 
+
+scw528@tux8:~/214bin/214lab2> rm standard_error.txt standard_output.txt
+rm: remove regular file 'standard_error.txt'? y
+rm: remove regular file 'standard_output.txt'? y
+
+scw528@tux8:~/214bin/214lab2> cat fake_file.txt my_name.txt 2> /dev/null       
+Sam Wilkinsom
+11160394
+
+scw528@tux8:~/214bin/214lab2> cat standard_output.txt
+Sam Wilkinsom
+11160394
+
+scw528@tux8:~/214bin/214lab2> ls
+data1.dat  data5.dat   file12.txt  file2.txt  file6.txt  my_name.txt
+data2.dat  file1.txt   file13.txt  file3.txt  file7.txt  standard_output.txt
+data3.dat  file10.txt  file14.txt  file4.txt  file8.txt
+data4.dat  file11.txt  file15.txt  file5.txt  file9.txt
+
+QUESTION 3
+
+# Note: a) did not paste very well. ‘top” command was used and the to suspend # it, the user will just type ctrl-z 
+
+a)
+top - 18:00:49 up 132 days,  3:14, 14 users,  load average: 48.85, 48.62, 48.53
+Tasks: 1485 total,  49 running, 1434 sleeping,   2 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.3 sy, 99.6 ni,  0.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem:  13193443+total, 57689624 used, 74244808 free,   984284 buffers
+KiB Swap: 16769952 total,        0 used, 16769952 free. 30709408 cached Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND    
+ 1734 boinc     39  19  848608 746044   1348 R 100.4  0.6  25:01.13 lasievee_1+
+ 3072 boinc     39  19   39476  22560   1348 R 100.4  0.0   0:52.42 lasieve5f_+
+ 1167 boinc     39  19  896156 779560   1356 R 100.1  0.6  34:59.82 lasieve5f_+
+ 1534 boinc     39  19   76740  36744   2128 R 100.1  0.0  29:40.52 wcgrid_mcm+
+ 1642 boinc     39  19  122240  47352    960 R 100.0  0.0  27:33.71 gnfs-lasie+
+ 2829 boinc     39  19  137780 100216   1348 R 100.1  0.1   5:14.50 lasieve5f_+
+36846 boinc     39  19  199452  76644   6152 R 100.1  0.1 554:46.04 wcgrid_fah+
+62298 boinc     39  19   76872  36852   2128 R 100.1  0.0  88:51.75 wcgrid_mcm+
+62331 boinc     39  19  894648 780800   1356 R 100.1  0.6  87:48.45 lasieve5f_+
+62773 boinc     39  19  894680 780672   1356 R 100.1  0.6  81:18.64 lasieve5f_+
+63943 boinc     39  19  894648 780384   1356 R 100.1  0.6  72:00.98 lasieve5f_+
+  477 boinc     39  19  894680 780028   1356 R  99.8  0.6  45:59.20 lasieve5f_+
+  530 boinc     39  19  848608 746248   1356 R  99.8  0.6  43:44.45 lasievee_1+
+  881 boinc     39  19  894680 779456   1356 R  99.8  0.6  39:29.09 lasieve5f_+
+ 1199 boinc     39  19  894648 779416   1348 R  99.8  0.6  34:38.47 lasieve5f_+
+ 1226 boinc     39  19   76740  3
+
+b)
+
+scw528@tux8:~/214bin/214lab2> env
+BIBINPUTS=.:/student/scw528/tex/bib:
+MANPATH=/usr/man:/usr/local/man:/usr/share/man:/cs/man
+XDG_SESSION_ID=c1796
+HOSTNAME=tux8
+CN3D_HOME=/student/binfo/Cn3D-4.1
+GPG_AGENT_INFO=/tmp/gpg-X5LSvC/S.gpg-agent:980:1
+HOST=tux8
+TERM=xterm-256color
+SHELL=/bin/bash
+QT5DOCDIR=/usr/share/doc/qt5
+CANBERRA_DRIVER=pulse
+LC_SOURCED=1
+HISTSIZE=1000
+TMPDIR=/tmp
+SSH_CLIENT=206.163.238.9 57652 22
+MGA_MENU_STYLE=mageia
+QTDIR=/usr/lib64/qt4
+OS=Linux
+SSH_TTY=/dev/pts/41
+LC_ALL=C
+QTDIR5=/usr/lib64/qt5
+USER=scw528
+PHRED_PARAMETER_FILE=/student/binfo/databases/PhredPar/phredpar.dat
+LD_LIBRARY_PATH=:/usr/lib:/usr/local/lib
+QT4DOCDIR=/usr/share/doc/qt4
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.cmd=01;32:*.exe=01;32:*.com=01;32:*.btm=01;32:*.bat=01;32:*.sh=01;32:*.csh=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.iso=01;31:*.jpg=01;35:*.jpeg=01;35:*.JPG=01;35:*.JPEG=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.ico=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.divx=01;35:*.xvid=01;35:*.3gp=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.gem=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:*.mp2=00;36:*.mod=00;36:*.xm=00;36:*.s3m=00;36:*.it=00;36:*.wma=00;36:*~=47;30:*.bak=47;30:*.swp=47;30:*.bck=47;30:*.bk=47;30:*.old=47;30:*.tmp=47;30:*.save=47;30:*.rpmsave=47;30:*.rpmnew=47;30:
+PILOTPORT=usb:
+_pam_krb5_stash_scw528_USASK.CA__1_shm=113246896/904
+PLPLOT_LIB=/student/binfo/EMBOSS-6.0.1/plplot/lib
+SYSTEMD_PAGER=/usr/bin/less -FR
+SCREENDIR=/student/scw528/tmp
+NLSPATH=/usr/share/locale/%l/%N
+MAIL=/var/spool/mail/scw528
+PATH=/bin:/usr/bin:/usr/local/bin:/student/binfo/bin:.
+INPUTRC=/etc/inputrc
+PWD=/student/scw528/214bin/214lab2
+SMLNJ_HOME=/usr/local
+EDITOR=vi
+LANG=en_CA.UTF-8
+PYTHONSTARTUP=/etc/pythonrc.py
+PS1=\u@\h:\w> 
+SSH_ASKPASS=/usr/lib64/ssh/ssh-askpass
+HISTCONTROL=ignoredups
+TEXINPUTS=.:/student/scw528/tex/inputs:
+LESSCHARSET=utf-8
+SHLVL=1
+HOME=/student/scw528
+CONSED_HOME=/student/binfo
+LANGUAGE=en_CA.UTF-8:en_US:en
+GCONF_TMPDIR=/tmp
+G_FILENAME_ENCODING=@locale
+TMP=/tmp
+LOGNAME=scw528
+CVS_RSH=ssh
+PRINTER=UNKNOWN
+SSH_CONNECTION=206.163.238.9 57652 128.233.236.7 22
+LESSOPEN=|/usr/bin/lesspipe.sh %s
+META_CLASS=download
+LADSPA_PATH=/usr/lib64/ladspa/
+UMLET_HOME=/usr/local/UMLet
+_=/bin/env
+OLDPWD=/student/scw528/214bin
+
+c)
+
+scw528@tux7:~/214bin/214lab2> pstree -p scw528
+gpg-agent(42680)
+
+sshd(42629)---bash(42630)-+-pstree(47468)
+                          `-top(46967)
+
+systemd(42627)---(sd-pam)(42628)
+
+d)
+
+scw528@tux7:~> kill -9 12987
+[1]+  Killed                  top
+
+e)
+
+scw528@tux7:~> pstree -p scw528
+gpg-agent(42680)
+
+sshd(12677)---bash(12678)---pstree(16276)
+
+systemd(42627)---(sd-pam)(42628)

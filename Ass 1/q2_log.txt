@@ -1,0 +1,24 @@
+Sam Wilkinson
+11160394
+CMPT 214 assignment 1
+QUESTION 2 LOG
+
+uofs-10-227-128-225:~ samwilkinson$ ls
+214bin		Documents	Movies		eclipse
+Applications	Downloads	Music		editor.txt
+Books		Dropbox		Pictures	firstproject
+Desktop		Library		Public		olfactometer
+uofs-10-227-128-225:~ samwilkinson$ ls -F | grep / | rs
+214bin/        Desktop/       Dropbox/       Music/         eclipse/
+Applications/  Documents/     Library/       Pictures/      firstproject/
+Books/         Downloads/     Movies/        Public/        olfactometer/
+
+# make new directory with just a text file inside and test pipeline
+
+uofs-10-227-128-225:desktop samwilkinson$ mkdir dirWtxt
+uofs-10-227-128-225:desktop samwilkinson$ cd dirWtxt
+uofs-10-227-128-225:dirWtxt samwilkinson$ cat > textfile.txt
+hopefully my pipeline works!
+uofs-10-227-128-225:dirWtxt samwilkinson$ ls -F | grep / | rs
+
+uofs-10-227-128-225:dirWtxt samwilkinson$ 

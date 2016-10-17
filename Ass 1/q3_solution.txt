@@ -1,0 +1,17 @@
+Sam Wilkinson
+CMPT 214 Ass 1
+
+QUESTION 3
+
+lines 4,5: move int variables inside main function
+
+MULTIPLE OCCURRENCE (lines 7,11,12,17,20,23,29,32): remove spaces before/after argument
+
+MULTIPLE OCCURRENCE (lines 12,14,17,21,22,24): fix brackets to be on a new line after if/else if/else statement and also on a new line after body
+
+MULTIPLE OCCURRENCE (lines 13,27): remove dumb comments
+
+MULTIPLE OCCURRENCE (lines 12,13,14,17,18,19,21,22,23,24): make body of statement easier to read, aka on a separate line from brackets
+
+// the -x flag of less would be helpful to help indenting each body of a statement, it would make it much more efficient and easier
+

@@ -1,0 +1,9 @@
+Sam Wilkinson
+11160394
+CMPT 214 assignment 1
+QUESTION 1
+
+1. 
+scw528@tux6:~> less myfile
+scw528@tux6:~> cat myfile | less
+scw528@tux6:~> less < myfile

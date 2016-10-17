@@ -1,0 +1,6 @@
+Sam Wilkinson
+11160394
+CMPT 214 assignment 1
+QUESTION 2
+
+bash-3.2$ ls -F | grep / | rs

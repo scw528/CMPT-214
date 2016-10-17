@@ -1,0 +1,11 @@
+Sam Wilkinson
+11160394
+CMPT 214 Ass 1 
+
+QUESTION 4 TESTING
+
+scw528@tux5:~> echo '199' | egrep -v '\<[0-9]{1,2}\>'
+199
+scw528@tux5:~> echo '19' | egrep -v '\<[0-9]{1,2}\>'
+scw528@tux5:~> echo '99' | egrep -v '\<[0-9]{1,2}\>'
+scw528@tux5:~> echo '9' | egrep -v '\<[0-9]{1,2}\>'

@@ -1,0 +1,157 @@
+Sam Wilkinson
+11160394
+scw528
+
+CMPT 214 Lab 1
+
+1. a)
+
+uofs-10-227-132-13:Desktop samwilkinson$ ls
+115downloads		Homework		copy
+214lab01.txt		NFLDK2016_CS_STD.pdf	finalprep
+BST.h			NightLapseOne		untitled folder
+BSc_4_CMPT.pdf		contents
+uofs-10-227-132-13:Desktop samwilkinson$ mkdir 214bin
+uofs-10-227-132-13:Desktop samwilkinson$ cd 214bin
+uofs-10-227-132-13:214bin samwilkinson$ mkdir 214lab1
+
+1. b)
+
+uofs-10-227-132-13:214bin samwilkinson$ cd
+uofs-10-227-132-13:~ samwilkinson$ cd
+uofs-10-227-132-13:~ samwilkinson$ ls
+Applications				Library
+Books					Movies
+Creative Cloud Files			Music
+Creative Cloud Files (archived) (1)	Pictures
+Desktop					Public
+Documents				firstproject
+Downloads				int
+Dropbox					olfactometer
+uofs-10-227-132-13:~ samwilkinson$ cd Desktop
+uofs-10-227-132-13:Desktop samwilkinson$ ls
+115downloads		Homework		finalprep
+214bin			NFLDK2016_CS_STD.pdf	ls
+214lab01.txt		NightLapseOne		untitled folder
+BST.h			contents
+BSc_4_CMPT.pdf		copy
+uofs-10-227-132-13:Desktop samwilkinson$ mv -i ls 214bin
+uofs-10-227-132-13:Desktop samwilkinson$ cd 214bin
+uofs-10-227-132-13:214bin samwilkinson$ mv -i ls 214lab1
+uofs-10-227-132-13:214bin samwilkinson$ ls
+214lab1
+uofs-10-227-132-13:214bin samwilkinson$ cd 214lab1
+
+1. c)
+
+uofs-10-227-132-13:214lab1 samwilkinson$ chmod u+x ls
+uofs-10-227-132-13:214lab1 samwilkinson$ ./ls
+This is not the real ls!
+
+1. d)
+
+uofs-10-227-132-13:Desktop samwilkinson$ ls
+115downloads		BSc_4_CMPT.pdf		contents
+214bin			Homework		copy
+214lab01.txt		NFLDK2016_CS_STD.pdf	finalprep
+BST.h			NightLapseOne		untitled folder
+uofs-10-227-132-13:Desktop samwilkinson$ cd 214bin
+uofs-10-227-132-13:214bin samwilkinson$ cd 214lab1
+uofs-10-227-132-13:214lab1 samwilkinson$ ls
+ls
+uofs-10-227-132-13:214lab1 samwilkinson$ ls /$HOME
+Applications				Library
+Books					Movies
+Creative Cloud Files			Music
+Creative Cloud Files (archived) (1)	Pictures
+Desktop					Public
+Documents				firstproject
+Downloads				int
+Dropbox					olfactometer
+uofs-10-227-132-13:214lab1 samwilkinson$ ls
+ls
+
+// FROM THIS POINT ON, I MOVED MY 214bin UNDER MY USER DIRECTORY. I HOPE ALL THE COMMANDS BEFORE THIS COMMENT SHOW AN ADEQUATE UNDERSTANDING.
+//
+
+1. e)
+
+uofs-10-227-129-202:~ samwilkinson$ export PATH=$HOME/214bin:$PATH
+
+1. f) 
+
+uofs-10-227-129-202:~ samwilkinson$ ls $HOME
+214bin					Library
+Applications				Movies
+Books					Music
+Creative Cloud Files			Pictures
+Creative Cloud Files (archived) (1)	Public
+Desktop					firstproject
+Documents				int
+Downloads				olfactometer
+Dropbox
+
+1. g)
+
+uofs-10-227-129-202:~ samwilkinson$ which ls
+/bin/ls
+
+1. h)
+
+uofs-10-227-129-202:~ samwilkinson$ cat $HOME/214bin/214lab1/ls
+#!/usr/bin/perl
+
+print "This is not the real ls!\n";
+
+2. a)
+
+uofs-10-227-129-202:~ samwilkinson$ tcsh
+[uofs-10-227-129-202:~] samwilkinson% echo $0
+tcsh
+[uofs-10-227-129-202:~] samwilkinson% bash
+bash-3.2$ echo $0
+bash
+
+2. b)
+
+i)
+
+uofs-10-227-164-36:Desktop samwilkinson$ echo You have started tcshrc
+You have started tcshrc
+
+ii)
+
+uofs-10-227-129-202:~ samwilkinson$ cat > .tcshrc
+You have started tchrc
+
+iii)
+
+uofs-10-227-129-202:~ samwilkinson$ cat .tcshrc
+You have started tchrc
+
+iv)
+
+uofs-10-227-129-202:~ samwilkinson$ tcsh
+[uofs-10-227-129-202:~] samwilkinson% echo $0
+tcsh
+
+v) 
+
+[uofs-10-227-129-202:~] samwilkinson% bash
+bash-3.2$ echo $0
+bash
+
+3. a)
+
+uofs-10-227-129-202:~ samwilkinson$ whatis editor > editor.txt
+
+3. b)
+
+bash-3.2$ set -o noclobber
+bash-3.2$ whatis editor > editor.txt
+bash: editor.txt: cannot overwrite existing file
+
+4. 
+
+uofs-10-227-129-202:~ samwilkinson$ bash
+bash-3.2$ 

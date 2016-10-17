@@ -1,0 +1,7 @@
+Sam Wilkinson
+11160394
+CMPT 214 ASS 1 
+
+QUESTION 4
+
+scw528@tux5:~> echo '199' | egrep -v '\<[0-9]{1,2}\>'

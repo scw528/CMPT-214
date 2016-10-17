@@ -1,0 +1,178 @@
+Sam Wilkinson
+CMPT 214 Lab 4
+11160394
+
+1.
+
+a)
+scw528@tux7:~> POSTAL_CODE='S7M 0B7'
+scw528@tux7:~> grep "[A-Z][0-9][A-Z] [0-9][A-Z][0-9]" -w <<< "$POSTAL_CODE"
+S7M 0B7
+scw528@tux7:~> POSTAL_CODE='s7m 0b7'
+scw528@tux7:~> grep "[A-Z][0-9][A-Z] [0-9][A-Z][0-9]" -w <<< "$POSTAL_CODE"
+scw528@tux7:~> POSTAL_CODE='S7M0B7'
+scw528@tux7:~> grep "[A-Z][0-9][A-Z] [0-9][A-Z][0-9]" -w <<< "$POSTAL_CODE"
+scw528@tux7:~> POSTAL_CODE='junkS7N 5C9garbage'
+scw528@tux7:~> grep "[A-Z][0-9][A-Z] [0-9][A-Z][0-9]" -w <<< "$POSTAL_CODE"
+
+b)
+scw528@tux7:~/214bin/214lab4> grep ^[O,I].*[a-z].*box$ mailinfo.txt
+Inbox
+Is a match box
+Outbox
+scw528@tux7:~/214bin/214lab4> grep ^[O,I].*[a-z].*box$ -v  mailinfo.txt
+the Inbox
+Doesn't match
+INBOX
+Outbox1
+InbOX
+Ibox
+I box
+
+c)
+scw528@tux7:~/214bin/214lab4> grep ^[O,I].*[a-z].*box$ -c  mailinfo.txt
+3
+scw528@tux7:~/214bin/214lab4> grep ^[O,I].*[a-z].*box$ -v -c  mailinfo.txt
+7
+
+2.
+a)
+scw528@tux7:~> cp /etc/passwd passwd
+cp: overwrite 'passwd'? y
+scw528@tux7:~> cut -d':' -f1 passwd
+root
+bin
+daemon
+adm
+lp
+sync
+mail
+news
+uucp
+operator
+games
+nobody
+messagebus
+systemd-journal-gateway
+systemd-journal-remote
+systemd-journal-upload
+systemd-network
+systemd-resolve
+systemd-timesync
+vcsa
+rpm
+polkitd
+colord
+rtkit
+gdm
+mysql
+openvpn
+lightdm
+rpc
+davfs2
+apache
+sshd
+sddm
+rpcuser
+ntp
+postfix
+nscd
+nm-openconnect
+local
+ntop
+svn
+avahi
+avahi-autoipd
+nagios
+nslcd
+math
+nx
+boinc
+
+b)
+scw528@tux7:~> cut -f 1 -d: passwd | sort -r
+vcsa
+uucp
+systemd-timesync
+systemd-resolve
+systemd-network
+systemd-journal-upload
+systemd-journal-remote
+systemd-journal-gateway
+sync
+svn
+sshd
+sddm
+rtkit
+rpm
+rpcuser
+rpc
+root
+postfix
+polkitd
+operator
+openvpn
+nx
+ntp
+ntop
+nslcd
+nscd
+nobody
+nm-openconnect
+news
+nagios
+mysql
+messagebus
+math
+mail
+lp
+local
+lightdm
+gdm
+games
+davfs2
+daemon
+colord
+boinc
+bin
+avahi-autoipd
+avahi
+apache
+adm
+
+c)
+scw528@tux7:~>  cut -f 1 -d: passwd | sort -r | head -1
+vcsa
+
+d)
+scw528@tux7:~>  cut -f 1 -d: passwd | sort -r | head -1 | cut -c1
+v
+
+e)
+scw528@tux7:~>  cut -f 1 -d: passwd | sort -r | head -1 | cut -c1 | tr [a-z] [A-Z]
+V
+
+f)
+scw528@tux7:~> cut -f 1 -d: passwd | sort -r | head -1 > max_username.txt 
+scw528@tux7:~> more max_username.txt 
+vcsa
+
+3.
+a)
+scw528@tux7:~> printf "$COLUMN1_HEADING\t $COLUMN2_HEADING \nJohn\t123456789\n $COLUMN2_HEADING"
+Name	 Student number 
+John	123456789
+
+b)
+scw528@tux7:~> printf "$%s%s$%s%s\n" "COLUMN1_HEADING" "\t" "COLUMN2_HEADING" "\nJohn\t123456789\n"
+$COLUMN1_HEADING\t$COLUMN2_HEADING\nJohn\t123456789\n
+
+4.
+It is a good idea to use braces on a body of an if statement for a couple of reasons. If another line of code is added, it will be treated as if it is not in the body of the if. Using brackets makes it easy for editing your code, you will be able to do many things with out having the need to insert brackets. 
+
+In the example given, flag is hardcoded to false, but it was intended to be false only if i was equal to 3.
+
+5. 
+a) i
+b) i
+
